@@ -80,10 +80,12 @@ service "mysql" do
 end
 
 skip_federated = case node['platform']
-                 when 'fedora', 'ubuntu', 'amazon'
+                 when 'fedora', 'ubuntu'
                    true
                  when 'centos', 'redhat', 'scientific'
                    node['platform_version'].to_f < 6.0
+                 when 'amazon'
+                   false
                  else
                    false
                  end

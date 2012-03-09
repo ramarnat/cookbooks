@@ -20,7 +20,8 @@
 #
 
 pkg = value_for_platform(
-    [ "centos", "redhat", "fedora" ] => {"default" => "php53-mysql"}, 
+    [ "centos", "redhat", "fedora"] => {"default" => "php53-mysql"},
+    "amazon" => {"default" => "php-mysql"}, 
     "default" => "php5-mysql"
   )
 
